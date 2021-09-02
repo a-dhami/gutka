@@ -9,7 +9,7 @@ import Foundation
 
 func loadFile<T: Decodable>(_ filename: String) -> T {
     let data: Data
-
+    
     guard let file = Bundle.main.url(forResource: filename, withExtension: nil)
             else {
         fatalError("Cannot find \(filename)")

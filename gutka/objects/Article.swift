@@ -8,6 +8,7 @@
 import Foundation
 
 class Article: Codable,Identifiable {
+    var id: Int
     var eng_name: String
     var san_name: String
 }

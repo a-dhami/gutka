@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */; };
+		F21F6DCF26E0A98200F2C7C5 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F6DCE26E0A98200F2C7C5 /* Instance.swift */; };
+		F296479826C714E100AA2F6F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F296478B26C714D000AA2F6F /* SQLite.framework */; };
+		F296479926C714E100AA2F6F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F296478B26C714D000AA2F6F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F29D22EB26BB3B87005C7B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D22EA26BB3B87005C7B06 /* AppDelegate.swift */; };
 		F29D22ED26BB3B87005C7B06 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D22EC26BB3B87005C7B06 /* SceneDelegate.swift */; };
 		F29D22EF26BB3B87005C7B06 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D22EE26BB3B87005C7B06 /* ContentView.swift */; };
@@ -16,9 +20,82 @@
 		F29D231726BB6F4B005C7B06 /* articlesData.json in Resources */ = {isa = PBXBuildFile; fileRef = F29D231626BB6F4B005C7B06 /* articlesData.json */; };
 		F29D231926BB6F70005C7B06 /* DataParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D231826BB6F70005C7B06 /* DataParser.swift */; };
 		F29D231B26BB6F9F005C7B06 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D231A26BB6F9F005C7B06 /* Article.swift */; };
+		F29D233D26BBCB8E005C7B06 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D233C26BBCB8E005C7B06 /* SettingsView.swift */; };
+		F29D233F26BC7AD0005C7B06 /* ArticleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D233E26BC7AD0005C7B06 /* ArticleView.swift */; };
+		F29E4C4326C6FE2800B81C01 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4C4226C6FE2800B81C01 /* Paragraph.swift */; };
+		F29E4C4526C6FF3900B81C01 /* SQLHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29E4C4426C6FF3900B81C01 /* SQLHelper.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F296478A26C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247AD31C3F04ED00AE3E12;
+			remoteInfo = "SQLite iOS";
+		};
+		F296478C26C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247ADD1C3F04ED00AE3E12;
+			remoteInfo = "SQLiteTests iOS";
+		};
+		F296478E26C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B3C1C3F3ED000AE3E12;
+			remoteInfo = "SQLite Mac";
+		};
+		F296479026C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = EE247B451C3F3ED000AE3E12;
+			remoteInfo = "SQLiteTests Mac";
+		};
+		F296479226C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E5A1C6BB0F50062603F;
+			remoteInfo = "SQLite tvOS";
+		};
+		F296479426C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 03A65E631C6BB0F60062603F;
+			remoteInfo = "SQLiteTests tvOS";
+		};
+		F296479626C714D000AA2F6F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = A121AC451CA35C79005A31D1;
+			remoteInfo = "SQLite watchOS";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		F296473526C713E400AA2F6F /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F296479926C714E100AA2F6F /* SQLite.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = gutkaDB.sqlite; sourceTree = "<group>"; };
+		F21F6DCE26E0A98200F2C7C5 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
+		F296478026C714D000AA2F6F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F29D22E726BB3B87005C7B06 /* gutka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gutka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29D22EA26BB3B87005C7B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F29D22EC26BB3B87005C7B06 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -30,6 +107,10 @@
 		F29D231626BB6F4B005C7B06 /* articlesData.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = articlesData.json; sourceTree = "<group>"; };
 		F29D231826BB6F70005C7B06 /* DataParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataParser.swift; sourceTree = "<group>"; };
 		F29D231A26BB6F9F005C7B06 /* Article.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
+		F29D233C26BBCB8E005C7B06 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		F29D233E26BC7AD0005C7B06 /* ArticleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArticleView.swift; sourceTree = "<group>"; };
+		F29E4C4226C6FE2800B81C01 /* Paragraph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		F29E4C4426C6FF3900B81C01 /* SQLHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +118,79 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F296479826C714E100AA2F6F /* SQLite.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F29646FE26C70A1000AA2F6F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				F29D22EE26BB3B87005C7B06 /* ContentView.swift */,
+				F29D233E26BC7AD0005C7B06 /* ArticleView.swift */,
+				F29D233C26BBCB8E005C7B06 /* SettingsView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		F29646FF26C70A7D00AA2F6F /* objects */ = {
+			isa = PBXGroup;
+			children = (
+				F29E4C4226C6FE2800B81C01 /* Paragraph.swift */,
+				F29D231A26BB6F9F005C7B06 /* Article.swift */,
+				F21F6DCE26E0A98200F2C7C5 /* Instance.swift */,
+			);
+			path = objects;
+			sourceTree = "<group>";
+		};
+		F296470026C70A9300AA2F6F /* data */ = {
+			isa = PBXGroup;
+			children = (
+				F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */,
+				F29D231626BB6F4B005C7B06 /* articlesData.json */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		F296470126C70AA800AA2F6F /* code */ = {
+			isa = PBXGroup;
+			children = (
+				F29D231826BB6F70005C7B06 /* DataParser.swift */,
+				F29E4C4426C6FF3900B81C01 /* SQLHelper.swift */,
+			);
+			path = code;
+			sourceTree = "<group>";
+		};
+		F296473226C713E400AA2F6F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F296478026C714D000AA2F6F /* SQLite.xcodeproj */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F296478126C714D000AA2F6F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F296478B26C714D000AA2F6F /* SQLite.framework */,
+				F296478D26C714D000AA2F6F /* SQLiteTests iOS.xctest */,
+				F296478F26C714D000AA2F6F /* SQLite.framework */,
+				F296479126C714D000AA2F6F /* SQLiteTests Mac.xctest */,
+				F296479326C714D000AA2F6F /* SQLite.framework */,
+				F296479526C714D000AA2F6F /* SQLiteTests tvOS.xctest */,
+				F296479726C714D000AA2F6F /* SQLite.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		F29D22DE26BB3B87005C7B06 = {
 			isa = PBXGroup;
 			children = (
 				F29D22E926BB3B87005C7B06 /* gutka */,
 				F29D22E826BB3B87005C7B06 /* Products */,
+				F296473226C713E400AA2F6F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -64,13 +207,13 @@
 			children = (
 				F29D22EA26BB3B87005C7B06 /* AppDelegate.swift */,
 				F29D22EC26BB3B87005C7B06 /* SceneDelegate.swift */,
-				F29D22EE26BB3B87005C7B06 /* ContentView.swift */,
 				F29D22F026BB3B89005C7B06 /* Assets.xcassets */,
 				F29D22F526BB3B89005C7B06 /* LaunchScreen.storyboard */,
-				F29D231826BB6F70005C7B06 /* DataParser.swift */,
+				F296470126C70AA800AA2F6F /* code */,
+				F29646FF26C70A7D00AA2F6F /* objects */,
+				F29646FE26C70A1000AA2F6F /* views */,
 				F29D22F826BB3B89005C7B06 /* Info.plist */,
-				F29D231A26BB6F9F005C7B06 /* Article.swift */,
-				F29D231626BB6F4B005C7B06 /* articlesData.json */,
+				F296470026C70A9300AA2F6F /* data */,
 				F29D22F226BB3B89005C7B06 /* Preview Content */,
 			);
 			path = gutka;
@@ -94,6 +237,7 @@
 				F29D22E326BB3B87005C7B06 /* Sources */,
 				F29D22E426BB3B87005C7B06 /* Frameworks */,
 				F29D22E526BB3B87005C7B06 /* Resources */,
+				F296473526C713E400AA2F6F /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -129,6 +273,12 @@
 			mainGroup = F29D22DE26BB3B87005C7B06;
 			productRefGroup = F29D22E826BB3B87005C7B06 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = F296478126C714D000AA2F6F /* Products */;
+					ProjectRef = F296478026C714D000AA2F6F /* SQLite.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				F29D22E626BB3B87005C7B06 /* gutka */,
@@ -136,12 +286,65 @@
 		};
 /* End PBXProject section */
 
+/* Begin PBXReferenceProxy section */
+		F296478B26C714D000AA2F6F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F296478A26C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296478D26C714D000AA2F6F /* SQLiteTests iOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests iOS.xctest";
+			remoteRef = F296478C26C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296478F26C714D000AA2F6F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F296478E26C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296479126C714D000AA2F6F /* SQLiteTests Mac.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests Mac.xctest";
+			remoteRef = F296479026C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296479326C714D000AA2F6F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F296479226C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296479526C714D000AA2F6F /* SQLiteTests tvOS.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = "SQLiteTests tvOS.xctest";
+			remoteRef = F296479426C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		F296479726C714D000AA2F6F /* SQLite.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = SQLite.framework;
+			remoteRef = F296479626C714D000AA2F6F /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
+
 /* Begin PBXResourcesBuildPhase section */
 		F29D22E526BB3B87005C7B06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				F29D22F726BB3B89005C7B06 /* LaunchScreen.storyboard in Resources */,
+				F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */,
 				F29D231726BB6F4B005C7B06 /* articlesData.json in Resources */,
 				F29D22F426BB3B89005C7B06 /* Preview Assets.xcassets in Resources */,
 				F29D22F126BB3B89005C7B06 /* Assets.xcassets in Resources */,
@@ -155,10 +358,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21F6DCF26E0A98200F2C7C5 /* Instance.swift in Sources */,
+				F29E4C4326C6FE2800B81C01 /* Paragraph.swift in Sources */,
 				F29D22EB26BB3B87005C7B06 /* AppDelegate.swift in Sources */,
 				F29D22ED26BB3B87005C7B06 /* SceneDelegate.swift in Sources */,
 				F29D231B26BB6F9F005C7B06 /* Article.swift in Sources */,
+				F29D233D26BBCB8E005C7B06 /* SettingsView.swift in Sources */,
 				F29D22EF26BB3B87005C7B06 /* ContentView.swift in Sources */,
+				F29E4C4526C6FF3900B81C01 /* SQLHelper.swift in Sources */,
+				F29D233F26BC7AD0005C7B06 /* ArticleView.swift in Sources */,
 				F29D231926BB6F70005C7B06 /* DataParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
