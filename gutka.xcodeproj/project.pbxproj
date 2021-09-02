@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */; };
 		F21F6DCF26E0A98200F2C7C5 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F6DCE26E0A98200F2C7C5 /* Instance.swift */; };
+		F21F6DD126E154DB00F2C7C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DD026E154DB00F2C7C5 /* README.md */; };
 		F296479826C714E100AA2F6F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F296478B26C714D000AA2F6F /* SQLite.framework */; };
 		F296479926C714E100AA2F6F /* SQLite.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F296478B26C714D000AA2F6F /* SQLite.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F29D22EB26BB3B87005C7B06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F29D22EA26BB3B87005C7B06 /* AppDelegate.swift */; };
@@ -95,6 +96,7 @@
 /* Begin PBXFileReference section */
 		F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = gutkaDB.sqlite; sourceTree = "<group>"; };
 		F21F6DCE26E0A98200F2C7C5 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
+		F21F6DD026E154DB00F2C7C5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F296478026C714D000AA2F6F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
 		F29D22E726BB3B87005C7B06 /* gutka.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gutka.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F29D22EA26BB3B87005C7B06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 		F29D22DE26BB3B87005C7B06 = {
 			isa = PBXGroup;
 			children = (
+				F21F6DD026E154DB00F2C7C5 /* README.md */,
 				F29D22E926BB3B87005C7B06 /* gutka */,
 				F29D22E826BB3B87005C7B06 /* Products */,
 				F296473226C713E400AA2F6F /* Frameworks */,
@@ -343,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F21F6DD126E154DB00F2C7C5 /* README.md in Resources */,
 				F29D22F726BB3B89005C7B06 /* LaunchScreen.storyboard in Resources */,
 				F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */,
 				F29D231726BB6F4B005C7B06 /* articlesData.json in Resources */,
