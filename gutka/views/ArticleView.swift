@@ -15,22 +15,20 @@ struct ArticleView: View {
     
     var body: some View {
         let paragraphs = SQLH.getParagraphs(article: item)
-            List(paragraphs){paragraph in
-                VStack(){
-                    if(sharedInstance.gurmukhiOn == true)
-                    {
+        List(){
+            ForEach(paragraphs){paragraph in
+                if(sharedInstance.gurmukhiOn == true){
+                    VStack(){
                         Text(paragraph.txt_gurmukhi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
                     }
-                    if(sharedInstance.englishOn == true)
-                    {
-                        Text(paragraph.txt_english).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                }
+                if(sharedInstance.romanOn == true){
+                    VStack(){
+                        Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize) ))
                     }
                 }
+            }
         }
-       
-        
-        
-        
     }
 }
 

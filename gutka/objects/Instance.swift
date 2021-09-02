@@ -13,7 +13,7 @@ class Instance {
     var fontSize:Double = 20
     var darkMode: Bool = false
     var gurmukhiOn: Bool = true
-    var englishOn: Bool = true
+    var romanOn: Bool = true
     
     private init () {
     }

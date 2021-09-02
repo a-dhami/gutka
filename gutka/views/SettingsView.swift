@@ -12,7 +12,7 @@ struct SettingsView: View {
     @State var darkToggle : Bool = Instance.sharedInstance.darkMode
     @State var fontSize : Double = Instance.sharedInstance.fontSize
     @State var gurmukhiOn : Bool = Instance.sharedInstance.gurmukhiOn
-    @State var englishOn : Bool = Instance.sharedInstance.englishOn
+    @State var romanOn : Bool = Instance.sharedInstance.romanOn
     
     var body: some View {
         NavigationView{
@@ -21,12 +21,12 @@ struct SettingsView: View {
                         footer: Text("Select what text is displayed.")){
                     
                     //English Transcription Button
-                    Toggle("English Text", isOn: $englishOn
-                    ).onChange(of: englishOn, perform: { value in
-                        Instance.sharedInstance.englishOn = englishOn
-                        print(Instance.sharedInstance.englishOn)
+                    Toggle("Roman-English Text", isOn: $romanOn
+                    ).onChange(of: romanOn, perform: { value in
+                        Instance.sharedInstance.romanOn = romanOn
+                        print(Instance.sharedInstance.romanOn)
                     }).onAppear(){
-                        self.englishOn = Instance.sharedInstance.englishOn
+                        self.romanOn = Instance.sharedInstance.romanOn
                     }
                     
                     

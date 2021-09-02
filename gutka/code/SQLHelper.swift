@@ -19,7 +19,7 @@ class SQLHelper {
     let article_id = Expression<Int>("article_id")
     let paragraph_id = Expression<Int64>("paragraph_id")
     let gurmukh_pID = Expression<Int64?>("gurmukh_pID")
-    let txt_english = Expression<String>("txt_english")
+    let txt_roman = Expression<String>("txt_roman")
     let txt_gurmukhi = Expression<String>("txt_gurmukhi")
     
     private init() {
@@ -49,7 +49,7 @@ class SQLHelper {
                         article_id: Int64(paragraph[article_id]),
                         paragraph_id: paragraph[paragraph_id],
                         gurmukh_pID: paragraph[gurmukh_pID] ?? 0,
-                        txt_english: paragraph[txt_english],
+                        txt_roman: paragraph[txt_roman],
                         txt_gurmukhi: paragraph[txt_gurmukhi]))
                 }
             } catch {
