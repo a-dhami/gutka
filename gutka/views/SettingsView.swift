@@ -10,11 +10,37 @@ import SwiftUI
 
 struct SettingsView: View {
     @State var darkToggle : Bool = Instance.sharedInstance.darkMode
-    @State var fontSize : Double = Instance.sharedInstance.fontSize    
+    @State var fontSize : Double = Instance.sharedInstance.fontSize
+    @State var gurmukhiOn : Bool = Instance.sharedInstance.gurmukhiOn
+    @State var englishOn : Bool = Instance.sharedInstance.englishOn
     
     var body: some View {
         NavigationView{
             Form{
+                Section(header: Text("Text Settings"),
+                        footer: Text("Select what text is displayed.")){
+                    
+                    //English Transcription Button
+                    Toggle("English Text", isOn: $englishOn
+                    ).onChange(of: englishOn, perform: { value in
+                        Instance.sharedInstance.englishOn = englishOn
+                        print(Instance.sharedInstance.englishOn)
+                    }).onAppear(){
+                        self.englishOn = Instance.sharedInstance.englishOn
+                    }
+                    
+                    
+                    //Gurmukhi Script Button
+                    Toggle("Gurmukhi Text", isOn: $gurmukhiOn
+                    ).onChange(of: gurmukhiOn, perform: { value in
+                        Instance.sharedInstance.gurmukhiOn = gurmukhiOn
+                        print(Instance.sharedInstance.gurmukhiOn)
+                    }).onAppear(){
+                        self.gurmukhiOn = Instance.sharedInstance.gurmukhiOn
+                    }
+                }
+                
+                
                 Section(header: Text("Display Settings"),
                         footer: Text("Adjust Dark Mode and Text Size")){
                     
@@ -39,6 +65,8 @@ struct SettingsView: View {
                     
                     
                 }
+                
+                
             }
         }
         

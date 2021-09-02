@@ -17,7 +17,14 @@ struct ArticleView: View {
         let paragraphs = SQLH.getParagraphs(article: item)
             List(paragraphs){paragraph in
                 VStack(){
-                    Text(paragraph.txt_gurmukhi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                    if(sharedInstance.gurmukhiOn == true)
+                    {
+                        Text(paragraph.txt_gurmukhi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                    }
+                    if(sharedInstance.englishOn == true)
+                    {
+                        Text(paragraph.txt_english).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                    }
                 }
         }
        
