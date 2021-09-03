@@ -13,6 +13,7 @@ struct SettingsView: View {
     @State var fontSize : Double = Instance.sharedInstance.fontSize
     @State var gurmukhiOn : Bool = Instance.sharedInstance.gurmukhiOn
     @State var romanOn : Bool = Instance.sharedInstance.romanOn
+    @State var hindiOn : Bool = Instance.sharedInstance.hindiOn
     
     var body: some View {
         NavigationView{
@@ -37,6 +38,14 @@ struct SettingsView: View {
                         print(Instance.sharedInstance.gurmukhiOn)
                     }).onAppear(){
                         self.gurmukhiOn = Instance.sharedInstance.gurmukhiOn
+                    }
+                    
+                    Toggle("Hindi Text", isOn: $hindiOn
+                    ).onChange(of: hindiOn, perform: { value in
+                        Instance.sharedInstance.hindiOn = hindiOn
+                        print(Instance.sharedInstance.hindiOn)
+                    }).onAppear(){
+                        self.hindiOn = Instance.sharedInstance.hindiOn
                     }
                 }
                 

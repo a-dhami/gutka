@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */; };
+		F21F6DCD26E0602600F2C7C5 /* sqlite.db in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DCC26E0602600F2C7C5 /* sqlite.db */; };
 		F21F6DCF26E0A98200F2C7C5 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = F21F6DCE26E0A98200F2C7C5 /* Instance.swift */; };
 		F21F6DD126E154DB00F2C7C5 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F21F6DD026E154DB00F2C7C5 /* README.md */; };
 		F296479826C714E100AA2F6F /* SQLite.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F296478B26C714D000AA2F6F /* SQLite.framework */; };
@@ -94,7 +94,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = gutkaDB.sqlite; sourceTree = "<group>"; };
+		F21F6DCC26E0602600F2C7C5 /* sqlite.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = sqlite.db; sourceTree = "<group>"; };
 		F21F6DCE26E0A98200F2C7C5 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
 		F21F6DD026E154DB00F2C7C5 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		F296478026C714D000AA2F6F /* SQLite.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SQLite.xcodeproj; path = "../../Downloads/SQLite.swift-master/SQLite.xcodeproj"; sourceTree = "<group>"; };
@@ -150,7 +150,7 @@
 		F296470026C70A9300AA2F6F /* data */ = {
 			isa = PBXGroup;
 			children = (
-				F21F6DCC26E0602600F2C7C5 /* gutkaDB.sqlite */,
+				F21F6DCC26E0602600F2C7C5 /* sqlite.db */,
 				F29D231626BB6F4B005C7B06 /* articlesData.json */,
 			);
 			path = data;
@@ -348,7 +348,7 @@
 			files = (
 				F21F6DD126E154DB00F2C7C5 /* README.md in Resources */,
 				F29D22F726BB3B89005C7B06 /* LaunchScreen.storyboard in Resources */,
-				F21F6DCD26E0602600F2C7C5 /* gutkaDB.sqlite in Resources */,
+				F21F6DCD26E0602600F2C7C5 /* sqlite.db in Resources */,
 				F29D231726BB6F4B005C7B06 /* articlesData.json in Resources */,
 				F29D22F426BB3B89005C7B06 /* Preview Assets.xcassets in Resources */,
 				F29D22F126BB3B89005C7B06 /* Assets.xcassets in Resources */,

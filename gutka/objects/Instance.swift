@@ -14,6 +14,7 @@ class Instance {
     var darkMode: Bool = false
     var gurmukhiOn: Bool = true
     var romanOn: Bool = true
+    var hindiOn: Bool = false
     
     private init () {
     }

@@ -27,6 +27,11 @@ struct ArticleView: View {
                         Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize) ))
                     }
                 }
+                if(sharedInstance.hindiOn == true){
+                    VStack(){
+                        Text(paragraph.txt_hindi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                    }
+                }
             }
         }
     }

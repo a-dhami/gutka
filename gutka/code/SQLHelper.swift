@@ -21,11 +21,12 @@ class SQLHelper {
     let gurmukh_pID = Expression<Int64?>("gurmukh_pID")
     let txt_roman = Expression<String>("txt_roman")
     let txt_gurmukhi = Expression<String>("txt_gurmukhi")
+    let txt_hindi = Expression<String>("txt_hindi")
     
     private init() {
         // Create connection to database
         do {
-            let path = Bundle.main.path(forResource: "gutkaDB", ofType: "sqlite")
+            let path = Bundle.main.path(forResource: "sqlite", ofType: "db")
             
             database = try Connection(path!, readonly: true)
             print("SQLH: Connected to DB")
@@ -50,7 +51,8 @@ class SQLHelper {
                         paragraph_id: paragraph[paragraph_id],
                         gurmukh_pID: paragraph[gurmukh_pID] ?? 0,
                         txt_roman: paragraph[txt_roman],
-                        txt_gurmukhi: paragraph[txt_gurmukhi]))
+                        txt_gurmukhi: paragraph[txt_gurmukhi],
+                        txt_hindi: paragraph[txt_hindi]))
                 }
             } catch {
                 print("Execution failed")
