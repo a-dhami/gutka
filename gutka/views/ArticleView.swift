@@ -24,12 +24,15 @@ struct ArticleView: View {
                 }
                 if(sharedInstance.romanOn == true){
                     VStack(){
-                        Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                        Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize - 2) ))
+                            .foregroundColor(.blue)
+                            
                     }
                 }
                 if(sharedInstance.hindiOn == true){
                     VStack(){
                         Text(paragraph.txt_hindi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                            .foregroundColor(.red)
                     }
                 }
             }
