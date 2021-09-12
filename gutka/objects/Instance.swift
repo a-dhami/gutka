@@ -9,12 +9,23 @@ import Foundation
 import SwiftUI
 
 class Instance {
+    
     static let sharedInstance = Instance()
+    
+    //global App settings
     var fontSize:Double = 20
-    var darkMode: Bool = false
+    
+    //languageOptions
     var gurmukhiOn: Bool = true
     var romanOn: Bool = true
     var hindiOn: Bool = false
+    
+    //languageColours
+    var gurmukhiCol: Color = .black
+    var romanCol: Color = .blue
+    var hindiCol: Color = .red
+    
+    
     
     private init () {
     }

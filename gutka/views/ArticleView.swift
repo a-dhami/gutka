@@ -20,19 +20,20 @@ struct ArticleView: View {
                 if(sharedInstance.gurmukhiOn == true){
                     VStack(){
                         Text(paragraph.txt_gurmukhi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                            .foregroundColor(sharedInstance.gurmukhiCol)
                     }
                 }
                 if(sharedInstance.romanOn == true){
                     VStack(){
                         Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize - 2) ))
-                            .foregroundColor(.blue)
+                            .foregroundColor(sharedInstance.romanCol)
                             
                     }
                 }
                 if(sharedInstance.hindiOn == true){
                     VStack(){
                         Text(paragraph.txt_hindi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
-                            .foregroundColor(.red)
+                            .foregroundColor(sharedInstance.hindiCol)
                     }
                 }
             }

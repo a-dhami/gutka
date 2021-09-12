@@ -9,27 +9,25 @@ import SwiftUI
 
 
 struct SettingsView: View {
-    @State var darkToggle : Bool = Instance.sharedInstance.darkMode
+    
+    @Binding var darkMode : Bool
+    @Environment(\.presentationMode) var presentationMode
+    
     @State var fontSize : Double = Instance.sharedInstance.fontSize
     @State var gurmukhiOn : Bool = Instance.sharedInstance.gurmukhiOn
     @State var romanOn : Bool = Instance.sharedInstance.romanOn
     @State var hindiOn : Bool = Instance.sharedInstance.hindiOn
+    @State var gurmukhiCol: Color =
+       Instance.sharedInstance.gurmukhiCol
+    @State var romanCol: Color =
+       Instance.sharedInstance.romanCol
+    @State var hindiCol: Color =
+       Instance.sharedInstance.hindiCol
     
     var body: some View {
         NavigationView{
             Form{
-                Section(header: Text("Text Settings"),
-                        footer: Text("Select what text is displayed.")){
-                    
-                    //English Transcription Button
-                    Toggle("Roman-English Text", isOn: $romanOn
-                    ).onChange(of: romanOn, perform: { value in
-                        Instance.sharedInstance.romanOn = romanOn
-                        print(Instance.sharedInstance.romanOn)
-                    }).onAppear(){
-                        self.romanOn = Instance.sharedInstance.romanOn
-                    }
-                    
+                Section(header: Text("Text Language Options")){
                     
                     //Gurmukhi Script Button
                     Toggle("Gurmukhi Text", isOn: $gurmukhiOn
@@ -40,6 +38,16 @@ struct SettingsView: View {
                         self.gurmukhiOn = Instance.sharedInstance.gurmukhiOn
                     }
                     
+                    //English Transcription Button
+                    Toggle("Roman-English Text", isOn: $romanOn
+                    ).onChange(of: romanOn, perform: { value in
+                        Instance.sharedInstance.romanOn = romanOn
+                        print(Instance.sharedInstance.romanOn)
+                    }).onAppear(){
+                        self.romanOn = Instance.sharedInstance.romanOn
+                    }
+                    
+                    //Hindi Transcription Button
                     Toggle("Hindi Text", isOn: $hindiOn
                     ).onChange(of: hindiOn, perform: { value in
                         Instance.sharedInstance.hindiOn = hindiOn
@@ -50,17 +58,30 @@ struct SettingsView: View {
                 }
                 
                 
+                //Display Color Picker
+                Section(header: Text("Text Display Options")){
+                    
+                    ColorPicker("Gurmukhi Text Color", selection: $gurmukhiCol, supportsOpacity: false)
+                        .onChange(of: gurmukhiCol, perform: { value in
+                            Instance.sharedInstance.gurmukhiCol = gurmukhiCol
+                        }).onAppear(){
+                            self.gurmukhiCol = Instance.sharedInstance.gurmukhiCol
+                        }
+                    
+                    ColorPicker("Roman-English Text Color", selection: $romanCol, supportsOpacity: false)
+                    
+                    ColorPicker("Hindi Text Color", selection: $hindiCol, supportsOpacity: false)
+                    
+                }
+                
+                
                 Section(header: Text("Display Settings"),
                         footer: Text("Adjust Dark Mode and Text Size")){
                     
                     //Dark Mode Toggle Button Code
-                    Toggle("Dark Mode", isOn: $darkToggle
-                    ).onChange(of: darkToggle, perform: { value in
-                        Instance.sharedInstance.darkMode = darkToggle
-                        print(Instance.sharedInstance.darkMode)
-                    }).onAppear(){
-                        self.darkToggle = Instance.sharedInstance.darkMode
-                    }
+                    Toggle("Dark Mode", isOn: $darkMode).onChange(of: darkMode, perform: { value in
+                        self.presentationMode.wrappedValue.dismiss()
+                    })
                     
                     
                     //Font Size Slider Code
@@ -70,20 +91,19 @@ struct SettingsView: View {
                     }).onAppear(){
                         self.fontSize = Instance.sharedInstance.fontSize
                     }
-                    
-                    
-                    
                 }
-                
-                
             }
+            .navigationBarTitle("Settings")
+            
+            
         }
+        .navigationBarBackButtonHidden(true)
         
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView(darkMode: .constant(false))
     }
 }
