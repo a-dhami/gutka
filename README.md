@@ -18,13 +18,15 @@ A database was created using a local SQL instance and populated with the followi
 
 A table called "paragraphs" that contains all of the paragraphs of the various "banis".
 A data scheme consisting of:
-      - id            : numeric (a unique identifier of each paragraph)
-      - article id    : numeric (a identifier of the "bani" that the paragraph belongs to)
-      - paragraph_id  : numeric (a unique identifier of the paragraph in the particular bani)
-      - txt_roman     : string  (a string consisting of the paragraph in a Roman Transliteration)
-      - txt_gurmukhi  : string  (a unicode-gurmukhi string consisting of the paragraph in it's original Gurmukhi form)
-      - txt_hindi     : string  (a unicode-devanagari string consisting of the paragraph in a Hindi Transliteration)
-      - style         : int     (a integer representing the style that the paragraph should take. etc: heading, normal, sub-heading)
+<ul>
+      <li>id            : numeric (a unique identifier of each paragraph)</li>
+      <li>article id    : numeric (a identifier of the "bani" that the paragraph belongs to)</li>
+      <li>paragraph_id  : numeric (a unique identifier of the paragraph in the particular bani)</li>
+      <li>txt_roman     : string  (a string consisting of the paragraph in a Roman Transliteration)</li>
+      <li>txt_gurmukhi  : string  (a unicode-gurmukhi string consisting of the paragraph in it's original Gurmukhi form)</li>
+      <li>txt_hindi     : string  (a unicode-devanagari string consisting of the paragraph in a Hindi Transliteration)</li>
+      <li>style         : int     (a integer representing the style that the paragraph should take. etc: heading, normal, sub-heading)</li>
+      </ul>
       
 The data was populated for the various "banis" included in the application.
 The paragraphs for each bani is obtained by using SQL queries and selecting all rows for the appropriate "article_id" which is the id of the "bani"
