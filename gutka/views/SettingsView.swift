@@ -64,16 +64,25 @@ struct SettingsView: View {
                     ColorPicker("Gurmukhi Text Color", selection: $gurmukhiCol, supportsOpacity: false)
                         .onChange(of: gurmukhiCol, perform: { value in
                             Instance.sharedInstance.gurmukhiCol = gurmukhiCol
+                            print("SET " , gurmukhiCol)
                         }).onAppear(){
                             self.gurmukhiCol = Instance.sharedInstance.gurmukhiCol
+                            print("READ " , gurmukhiCol)
                         }
                     
-                    ColorPicker("Roman-English Text Color", selection: $romanCol, supportsOpacity: false)
+                    ColorPicker("Roman-English Text Color", selection: $romanCol, supportsOpacity: false).onChange(of: romanCol, perform: { value in
+                        Instance.sharedInstance.romanCol = romanCol
+                    }).onAppear(){
+                        self.romanCol = Instance.sharedInstance.romanCol
+                    }
                     
-                    ColorPicker("Hindi Text Color", selection: $hindiCol, supportsOpacity: false)
+                    ColorPicker("Hindi Text Color", selection: $hindiCol, supportsOpacity: false).onChange(of: hindiCol, perform: { value in
+                        Instance.sharedInstance.hindiCol = hindiCol
+                    }).onAppear(){
+                        self.hindiCol = Instance.sharedInstance.hindiCol
+                    }
                     
                 }
-                
                 
                 Section(header: Text("Display Settings"),
                         footer: Text("Adjust Dark Mode and Text Size")){
@@ -81,6 +90,28 @@ struct SettingsView: View {
                     //Dark Mode Toggle Button Code
                     Toggle("Dark Mode", isOn: $darkMode).onChange(of: darkMode, perform: { value in
                         self.presentationMode.wrappedValue.dismiss()
+                        if(darkMode == true){
+                            if(gurmukhiCol == .black){
+                                gurmukhiCol = .white
+                            }
+                            if(romanCol == .black){
+                                romanCol = .white
+                            }
+                            if(hindiCol == .black){
+                                hindiCol = .white
+                            }
+                        }
+                        else{
+                            if(gurmukhiCol == .white){
+                                gurmukhiCol = .black
+                            }
+                            if(romanCol == .white){
+                                romanCol = .black
+                            }
+                            if(hindiCol == .white){
+                                hindiCol = .black
+                            }
+                        }
                     })
                     
                     
@@ -92,6 +123,10 @@ struct SettingsView: View {
                         self.fontSize = Instance.sharedInstance.fontSize
                     }
                 }
+                
+                Button("Save", action: {
+                    self.presentationMode.wrappedValue.dismiss()
+                })
             }
             .navigationBarTitle("Settings")
             
