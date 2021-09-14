@@ -18,10 +18,10 @@ class SQLHelper {
     let id = Expression<Int64>("id")
     let article_id = Expression<Int>("article_id")
     let paragraph_id = Expression<Int64>("paragraph_id")
-    let gurmukh_pID = Expression<Int64?>("gurmukh_pID")
     let txt_roman = Expression<String>("txt_roman")
     let txt_gurmukhi = Expression<String>("txt_gurmukhi")
     let txt_hindi = Expression<String>("txt_hindi")
+    let style = Expression<Int>("style")
     
     private init() {
         // Create connection to database
@@ -49,10 +49,10 @@ class SQLHelper {
                         id: paragraph[id],
                         article_id: Int64(paragraph[article_id]),
                         paragraph_id: paragraph[paragraph_id],
-                        gurmukh_pID: paragraph[gurmukh_pID] ?? 0,
                         txt_roman: paragraph[txt_roman],
                         txt_gurmukhi: paragraph[txt_gurmukhi],
-                        txt_hindi: paragraph[txt_hindi]))
+                        txt_hindi: paragraph[txt_hindi],
+                                        style: paragraph[style]))
                 }
             } catch {
                 print("Execution failed")
