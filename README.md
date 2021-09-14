@@ -1,4 +1,4 @@
-# ![image](https://raw.githubusercontent.com/a-dhami/gutka/main/data/AppIcons/29.png) Gutka 
+# ![image](https://raw.githubusercontent.com/a-dhami/gutka/main/data/AppIcons/29.png) Gutka Sahib
 
 ## Native iOS Application developed in Swift and SwiftUI
 ### Prerelease Version
