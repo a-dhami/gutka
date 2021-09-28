@@ -15,25 +15,56 @@ struct ArticleView: View {
     
     var body: some View {
         let paragraphs = SQLH.getParagraphs(article: item)
-        List(){
-            ForEach(paragraphs){paragraph in
-                if(sharedInstance.gurmukhiOn == true){
-                    VStack(){
-                        Text(paragraph.txt_gurmukhi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
-                            .foregroundColor(sharedInstance.gurmukhiCol)
+        ScrollViewReader{ scrollView in
+            List(){
+                ForEach(paragraphs){paragraph in
+                    if(sharedInstance.gurmukhiOn == true){
+                        VStack(){
+                            if(paragraph.isCentered){
+                                Text(paragraph.txt_gurmukhi)
+                                    .font(.system(size:CGFloat(paragraph.isHeadline ? sharedInstance.fontSize + 7 : sharedInstance.fontSize)))
+                                    .foregroundColor(sharedInstance.gurmukhiCol)
+                                    .frame(maxWidth: .infinity)
+                                    .multilineTextAlignment(paragraph.isCentered ? .center : .leading)
+                            }
+                            else{
+                                Text(paragraph.txt_gurmukhi)
+                                    .font(.system(size:CGFloat(sharedInstance.fontSize) ))
+                                    .foregroundColor(sharedInstance.gurmukhiCol)
+                            }
+                        }
                     }
-                }
-                if(sharedInstance.romanOn == true){
-                    VStack(){
-                        Text(paragraph.txt_roman).font(.system(size:CGFloat(sharedInstance.fontSize - 2) ))
-                            .foregroundColor(sharedInstance.romanCol)
-                            
+                    if(sharedInstance.romanOn == true){
+                        VStack(){
+                            if(paragraph.isCentered){
+                                Text(paragraph.txt_roman)
+                                    .font(.system(size:CGFloat(paragraph.isHeadline ? sharedInstance.fontSize + 7 : sharedInstance.fontSize)))
+                                    .foregroundColor(sharedInstance.romanCol)
+                                    .frame(maxWidth: .infinity)
+                                    .multilineTextAlignment(paragraph.isCentered ? .center : .leading)
+                            }
+                            else{
+                                Text(paragraph.txt_roman)
+                                    .font(.system(size:CGFloat(sharedInstance.fontSize)))
+                                    .foregroundColor(sharedInstance.romanCol)
+                            }
+                        }
                     }
-                }
-                if(sharedInstance.hindiOn == true){
-                    VStack(){
-                        Text(paragraph.txt_hindi).font(.system(size:CGFloat(sharedInstance.fontSize) ))
-                            .foregroundColor(sharedInstance.hindiCol)
+                    if(sharedInstance.hindiOn == true){
+                        VStack(){
+                            if(paragraph.isCentered){
+                                Text(paragraph.txt_hindi)
+                                    .font(.system(size:CGFloat(paragraph.isHeadline ? sharedInstance.fontSize + 7 : sharedInstance.fontSize)))
+                                    .foregroundColor(sharedInstance.hindiCol)
+                                    .frame(maxWidth: .infinity)
+                                    .multilineTextAlignment(paragraph.isCentered ? .center : .leading)
+                            }
+                            else{
+                                Text(paragraph.txt_hindi)
+                                    .font(.system(size:CGFloat(sharedInstance.fontSize)))
+                                    .foregroundColor(sharedInstance.hindiCol)
+                            }
+                        }
                     }
                 }
             }

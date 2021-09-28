@@ -22,6 +22,8 @@ class SQLHelper {
     let txt_gurmukhi = Expression<String>("txt_gurmukhi")
     let txt_hindi = Expression<String>("txt_hindi")
     let style = Expression<Int>("style")
+    let isCentered = Expression<Bool>("isCentered")
+    let isHeadline = Expression<Bool>("isHeadline")
     
     private init() {
         // Create connection to database
@@ -52,7 +54,9 @@ class SQLHelper {
                         txt_roman: paragraph[txt_roman],
                         txt_gurmukhi: paragraph[txt_gurmukhi],
                         txt_hindi: paragraph[txt_hindi],
-                                        style: paragraph[style]))
+                        style: paragraph[style],
+                        isCentered: paragraph[isCentered],
+                        isHeadline: paragraph[isHeadline]))
                 }
             } catch {
                 print("Execution failed")

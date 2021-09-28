@@ -15,8 +15,10 @@ struct Paragraph : Identifiable {
     var txt_gurmukhi: String
     var txt_hindi: String
     var style: Int
+    var isCentered: Bool
+    var isHeadline: Bool
     
-    init(id: Int64, article_id: Int64, paragraph_id: Int64, txt_roman: String, txt_gurmukhi: String, txt_hindi: String, style: Int) {
+    init(id: Int64, article_id: Int64, paragraph_id: Int64, txt_roman: String, txt_gurmukhi: String, txt_hindi: String, style: Int, isCentered: Bool, isHeadline: Bool) {
         self.id = id
         self.article_id = article_id
         self.paragraph_id = paragraph_id
@@ -24,5 +26,7 @@ struct Paragraph : Identifiable {
         self.txt_gurmukhi = txt_gurmukhi
         self.txt_hindi = txt_hindi
         self.style = style
+        self.isCentered = isCentered
+        self.isHeadline = isHeadline
     }
 }
